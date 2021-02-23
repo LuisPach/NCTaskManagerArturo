@@ -1,0 +1,14 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="Main" type="JUnit" factoryName="JUnit">
+    <module name="NCTaskManager" />
+    <selectedOptions>
+      <option name="module.classpath" />
+    </selectedOptions>
+    <option name="MAIN_CLASS_NAME" value="" />
+    <option name="METHOD_NAME" value="" />
+    <option name="TEST_OBJECT" value="class" />
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>
