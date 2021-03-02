@@ -2,6 +2,7 @@ package mx.edu.j2se.Pacheco.tasks;
 
 public class Task {
 
+    String task;
     String title;
     int time;
     int start;
@@ -14,22 +15,32 @@ public class Task {
     int current;
 
     public String Task(String title, int time) {
-        if (time != null) {
-            inactive = 1;
-            return "inactive task";
+        if (this.time == ' ') {
+            inactive = 0;
+            this.time = time;
 
         } else {
-            return;
+            inactive = 1;
+            //return "Inactive";
         }
-        if (this.title = title) {
+        if (this.title != title) {
+            repeatedName = 0;
+            this.title = title;
+        } else {
             repeatedName = 1;
-            return "Repeated task";
+           //return "Repeated task";
         }
+        return task;
     }
-    public String Task(title,start,end, interval){
-        if (start==null || end=null){
-            inactive=1;
-        }
+
+
+    public String Task(String title,int start,int end, int interval){
+        this.title=title;
+        this.start=start;
+        this.end=end;
+        this.interval=interval;
+
+        return task;
         }
 
     public String getTitle(){
@@ -41,7 +52,7 @@ public class Task {
         }
 
     public boolean isActive(){
-            if(inactive=1){
+            if(inactive==1){
                 active=false;
                 return active;
             }
@@ -57,7 +68,7 @@ public class Task {
             this.active=active;
         }
     public int getTime(){
-            if (repeatedName=1){
+            if (repeatedName==1){
                 return start;
             }
             else {
@@ -65,55 +76,73 @@ public class Task {
             }
         }
     public void setTime(int time){
-        this.time=time;
+        if(isRepeated()){
+            this.start=time;
+            this.end=time;
+            this.interval=0;
+        } else{
+            this.time=time;
         }
+    }
 
     public int getStartTime(){
-            if(repeatedName!=1){
-                return timeExecution;
+            if(isRepeated()){
+                return start;
+            } else{
+                return time;
             }
         }
+
     public int getEndTime(){
-        if(repeatedName!=1){
-            while(true) {
-                timeExecution++;
-                }
-            return timeExecution;
-            }
+        if(isRepeated()){
+            return end;
+        } else{
+            return time;
         }
+    }
+
     public int getRepeatInterval(){
-        if(repeatedName!=1){
-            return 0;
+        if(isRepeated()){
+            return interval;
         }
         else{
-            return interval;
+            return 0;
         }
 
     }
     public void setTime(int start, int end, int interval){
-        if(repeatedName!=1){
-           this.start=time;
-           getEndTime();
-           getEndTime();
-
+        if(isRepeated()){
+           this.start=start;
+           this.end=end;
+           this.interval=interval;
 
         } else{
+            this.time=' ';
             this.start=start;
             this.end=end;
             this.interval=interval;
         }
-
     }
+
     public boolean isRepeated(){
-        if(repeatedName=1){
+        if(interval>0){
             return true;
         }else{
             return false;
         }
     }
     public int nextTimeAfter(int current){
-        current=current+timeExecution;
-        return current;
+        if (isRepeated() && current<start){
+            return start;
+        }else if (isRepeated() && current<end && current>=start){
+            start=start+interval;
+            return start;
+        }else if(isRepeated()==false && current<time){
+            return time;
+        } else{
+            return -1;
+        }
+
     }
 }
 
