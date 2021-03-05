@@ -3,7 +3,7 @@ package mx.edu.j2se.Pacheco.tasks;
 import java.lang.reflect.Array;
 
 public class ArrayTaskList {
-
+/*
     int index;
     int from;
     int to;
@@ -52,4 +52,6 @@ public class ArrayTaskList {
             }
         }
     }
+
+ */
 }

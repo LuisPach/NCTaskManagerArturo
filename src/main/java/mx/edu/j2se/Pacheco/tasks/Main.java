@@ -28,6 +28,12 @@ public class Main {
 		System.out.println(agregar(1, "Sal"));
 		persona.mostrarDatos();
 
+		Task task1=new Task("correr", 9);
+		Task task2=new Task("jugar",10,20,1);
+		task2.setTime(2);
+		//task1.isRepeated();
+
+		System.out.println(task2.getTime()+" "+task2.getTitle());
 
 	}
 
