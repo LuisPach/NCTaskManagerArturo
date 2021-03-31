@@ -1,23 +1,21 @@
 package mx.edu.j2se.Pacheco.evaluation;
 
-public class Circle {
+public class Circle{
 
     float radius;
 
 
-    protected float defaultConstructor(){
-        return radius=1;
+    public Circle(){
+        this.radius=1;
     }
-    protected void setRadius(float radius){
-
-        if(radius>0){
+    public Circle(float radius) {
+        if(radius<=0){
             throw new IllegalArgumentException("Should be greater than 0");
         }
         this.radius=radius;
-
     }
 
-    protected Float getRadius() {
+    protected float getRadius() {
         return radius;
     }
 

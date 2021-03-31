@@ -11,15 +11,24 @@ public class Task {
 
 
 
-    public Task(String title, int time) {
-        this.title = title;
-        this.time = time;
+    public Task(String title, int time){
+       if (time<0) {
+        throw new IllegalArgumentException ("Use a positive value, please");
+        }
+            this.title = title;
+            this.time = time;
+
     }
+
     public Task(String title, int start, int end, int interval) {
-        this.title = title;
-        this.start = start;
-        this.end = end;
-        this.interval = interval;
+        if(start<0 || end<start || interval<=0){
+            throw new IllegalArgumentException ("Use proper values, please");
+        }
+            this.title = title;
+            this.start = start;
+            this.end = end;
+            this.interval = interval;
+
     }
 
 
@@ -75,6 +84,9 @@ public class Task {
     }
 
     public void setTime(int time) {
+        if(time<0){
+            throw new IllegalArgumentException("Use a positive value, please");
+        }
         if (isRepeated()) {
             this.time = time;
             this.start = 0;
@@ -86,6 +98,9 @@ public class Task {
         }
     }
     public void setTime(int start, int end, int interval) {
+        if(start<0 || end<start || interval<=0){
+            throw new IllegalArgumentException ("Use proper values, please");
+        }
         if (isRepeated()) {
 
             this.start = start;

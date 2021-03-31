@@ -35,6 +35,29 @@ public class Main {
 
 		System.out.println(task2.getTime()+" "+task2.getTitle());
 
+		/*
+		String[] a1 = {"Avila","Burgos","León","Palencia","Salamanca", "Segovia","Soria","Valladolid","Zamora"};
+		String a2[] =new String[0];
+		System.arraycopy(a2,0,a1,0,0);
+		for (int i=0;i<a2.length;i++){
+			System.out.println(a2[i]);
+		}
+
+		 /*
+		int arr1[] = { 0, 1, 2, 3, 4, 5 };
+		int arr2[] = { 5, 10, 20, 30, 40, 50 };
+
+		// copies an array from the specified source array
+		System.arraycopy(arr1, 0, arr2, 0, 1);
+		System.out.print("array2 = ");
+		System.out.print(arr2[0] + " ");
+		System.out.print(arr2[1] + " ");
+		System.out.print(arr2[2] + " ");
+		System.out.print(arr2[3] + " ");
+		System.out.print(arr2[4] + " ");
+		*/
+
+
 	}
 
 	public static String agregar(String x, Integer y){
