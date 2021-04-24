@@ -3,7 +3,7 @@ package mx.edu.j2se.Pacheco.tasks;
 import java.util.Arrays;
 import java.util.LinkedList;
 
-public class LinkedTaskList {
+public class LinkedTaskList extends AbstractTaskList{
 
     LinkedList<Task> listTask= new LinkedList<Task>();
 
@@ -31,7 +31,7 @@ public class LinkedTaskList {
         return listTask.size();
     }
 
-    public Task get(int index){
+    public Task getTask(int index){
         if (index < listTask.size() && index >= 0) {
             return listTask.get(index);
         }

@@ -3,7 +3,7 @@ package mx.edu.j2se.Pacheco.tasks;
 import java.lang.reflect.Array;
 import java.util.Arrays;
 
-public class ArrayTaskList{
+public class ArrayTaskList extends AbstractTaskList{
 
 
     int n=1;

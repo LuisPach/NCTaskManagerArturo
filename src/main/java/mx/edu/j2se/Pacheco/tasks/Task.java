@@ -1,5 +1,7 @@
 package mx.edu.j2se.Pacheco.tasks;
 
+import java.util.Objects;
+
 public class Task {
     String  title;
     int     time;
@@ -135,6 +137,50 @@ public class Task {
             return -1;
         }
     }
+
+    public boolean equals(Object a){
+    if(this==a){
+        return true;
+    }else if(a==null || !(a instanceof Task)){
+        return false;
+    }
+        Task b = (Task) a;
+
+        if(!b.title.equals(this.title))
+            return false;
+        else if(this.time != b.time)
+            return false;
+        else if(this.start != b.start)
+            return false;
+        else if (this.end != b.end)
+            return false;
+        else if(this.interval != b.interval)
+            return false;
+        else return true;
+    }
+
+    public int hashCode() {
+        return Objects.hash(title, time, start, end, interval, active);
+    }
+
+    public String toString() {
+        String temp;
+        if(this.isRepeated()){
+            temp = "\n Title:"+title+"\t Start:"+start+"\t End:"+end+"\t Interval:"+interval+"\t Active: "+active+
+                    "\t Repetitive: "+isRepeated();
+        }else{
+            temp = "\n Title:"+title+"\t Time:"+time+"\t Active:"+active+"\t Repetitive:"+isRepeated();
+        }
+        return temp;
+    }
+
+    public Object copy() throws CloneNotSupportedException {
+
+        return super.clone();
+
+    }
+
+
 }
 
 
